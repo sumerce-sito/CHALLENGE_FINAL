@@ -18,13 +18,21 @@ visualizaciones/ (Opcional): Carpeta que podría contener visualizaciones genera
 El proceso de preparación de los datos incluyó las siguientes etapas:
 
   **Carga de Datos:** Se cargó el archivo CSV df_limpio.csv utilizando la librería Pandas.
+  
   **Limpieza Inicial:** Se eliminaron columnas irrelevantes como customerID.
+  
   **Manejo de Valores Especiales:** Se reemplazaron los valores 'No internet service' en las columnas relevantes por 'No'.
+  
   **Manejo de Valores Nulos:** Se eliminaron las filas con valores nulos en las columnas Total.Day y account.Charges.Total.
+  
   **Clasificación de Variables:** Las variables se clasificaron en categóricas y numéricas para aplicar el preprocesamiento adecuado.
+  
   **Normalización:** Se aplicó StandardScaler a las columnas numéricas para escalarlas y prepararlas para modelos que requieren características en una escala similar.
+  
   **Codificación:** Se aplicó One-Hot Encoding (pd.get_dummies()) a las variables categóricas para convertirlas en un formato numérico binario, adecuado para los modelos de machine learning. Se utilizó drop_first=True para evitar la multicolinealidad.
+  
   **Balanceo de Clases:** Se identificó un desbalance en la proporción de clientes que cancelan (Churn). Para abordar esto, se aplicó la técnica SMOTE (Synthetic Minority Over-sampling Technique) al conjunto de entrenamiento para sobremuestrear la clase minoritaria (Churn = Yes).
+  
   **División del Conjunto de Datos:** Los datos fueron divididos en conjuntos de entrenamiento y prueba utilizando train_test_split con una proporción de 70/30 y estratificación para mantener la proporción de clases en ambos conjuntos.
 
 ##**Modelado y Justificaciones**
